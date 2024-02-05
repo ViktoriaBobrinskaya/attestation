@@ -1,0 +1,36 @@
+def calculate():
+    operation = input("Выберите операцию (+, -, *, /): ")
+    
+    if operation in ('+', '-', '*', '/'):
+        num1 = float(input("Введите первое число: "))
+        num2 = float(input("Введите второе число: "))
+        
+        if operation == '+':
+            result = num1 + num2
+        elif operation == '-':
+            result = num1 - num2
+        elif operation == '*':
+            result = num1 * num2
+        else:
+            result = num1 / num2
+            
+        print("Результат:", result)
+    else:
+        print("Неверная операция!")
+        
+    calculate_again()
+
+
+def calculate_again():
+    choice = input("Хотите совершить еще одну операцию? (да/нет): ")
+    
+    if choice.lower() == 'да':
+        calculate()
+    elif choice.lower() == 'нет':
+        print("Программа завершена.")
+    else:
+        print("Неверный ввод!")
+        calculate_again()
+
+
+calculate()
